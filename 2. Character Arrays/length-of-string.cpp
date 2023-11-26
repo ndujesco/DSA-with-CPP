@@ -20,7 +20,7 @@ int main()
     char name[100];
 
     cout << "Enter your name: ";
-    cin >> name;
+    cin.getline(name, 5);
 
     cout << "The length of characters in your name is " << length(name) << endl;
 
