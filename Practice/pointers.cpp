@@ -10,7 +10,9 @@ int main()
     int *i_ptr1 = &i;
     int &i_ptr2 = i;
 
-    cout << i_ptr1 << " " << i_ptr2 << endl;
+    i_ptr2 = 99;
+
+    cout << i_ptr1 << " " << i << endl;
     cout << &i << " " << &i_ptr2 << endl;
 
     return 0;
