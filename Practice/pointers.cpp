@@ -2,6 +2,16 @@
 
 using namespace std;
 
+void print_reference(int &input)
+{
+    cout << &input << endl;
+}
+
+void print(int input)
+{
+    cout << &input << endl;
+}
+
 int main()
 {
 
@@ -10,10 +20,9 @@ int main()
     int *i_ptr1 = &i;
     int &i_ptr2 = i;
 
-    i_ptr2 = 99;
-
-    cout << i_ptr1 << " " << i << endl;
-    cout << &i << " " << &i_ptr2 << endl;
+    cout << &i_ptr2 << endl;
+    print(i_ptr2);
+    print_reference(i_ptr2);
 
     return 0;
 }
