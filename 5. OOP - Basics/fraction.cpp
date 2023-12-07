@@ -26,6 +26,13 @@ public:
         denominator = lcm;
     }
 
+    void subtract(Fraction const &f2)
+    {
+        int lcm = this->lcm(denominator, f2.denominator);
+        numerator = (lcm / denominator) * numerator - (lcm / f2.denominator) * f2.numerator; // we are sure that lcm/denominator will give a whole number
+        denominator = lcm;
+    }
+
     void multiply(Fraction const &f2)
     {
         numerator = numerator * f2.numerator;
@@ -71,9 +78,7 @@ int main()
     Fraction f1(1, 3);
     Fraction f2(3, 7);
 
-    // f1.add(f2);
-    f1.multiply(f2);
-    f1.simplify();
+    f1.subtract(f2);
 
     f1.print();
 }
