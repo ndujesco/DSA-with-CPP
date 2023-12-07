@@ -14,7 +14,7 @@ public:
         this->denominator = denominator;
     }
 
-    void print()
+    void print() const
     {
         cout << numerator << "/" << denominator << endl;
     }

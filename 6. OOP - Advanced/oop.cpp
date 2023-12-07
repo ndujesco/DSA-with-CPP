@@ -3,14 +3,22 @@ using namespace std;
 
 class Student
 {
+public:
     int age;
     char *name;
 
-public:
+    Student(Student const &s)
+    {
+        this->age = s.age;
+        this->name = new char(strlen(s.name) + 1);
+        strcpy(this->name, s.name);
+    }
     Student(int age, char *name)
     {
         this->age = age;
-        this->name = name;
+        this->name = new char(strlen(name) + 1);
+        strcpy(this->name, name);
+        // this->name = name;   shalllow copy which should be ideally avoided.
     }
 
     void display()
@@ -22,10 +30,15 @@ public:
 
 int main()
 {
-
     char name[] = "Ndujekwu";
-    Student ugo(20, name);
+    Student ugo(21, name);
+
+    Student fisco(ugo);
+    fisco.age -= 1;
+
     ugo.display();
+    cout << endl;
+    fisco.display();
 
     return 0;
 }
