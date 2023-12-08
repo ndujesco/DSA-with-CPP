@@ -29,6 +29,16 @@ public:
         return fnew;
     }
 
+    Fraction &operator+=(Fraction const &f2)
+    {
+        int lcm = this->lcm(denominator, f2.denominator);
+        numerator = (lcm / denominator) * numerator + (lcm / f2.denominator) * f2.numerator; // we are sure that lcm/denominator will give a whole number
+        denominator = lcm;
+        simplify();
+
+        return *this;
+    }
+
     Fraction operator-(Fraction const &f2) const
     {
         int lcm = this->lcm(denominator, f2.denominator);
