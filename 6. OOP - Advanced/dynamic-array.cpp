@@ -20,9 +20,19 @@ int main()
     d1.add(100);
     cout << "Capacity after 10th element: " << d1.getCapacity() << endl;
     d1.add(110);
-    cout << "Capacity after 11th element: " << d1.getCapacity() << endl << endl;;
+    cout << "Capacity after 11th element: " << d1.getCapacity() << endl
+         << endl;
+    ;
 
     d1.print();
+
+    cout << d1.getELement(9) << endl;
+
+    DynamicArray d2(d1);
+    d1.add(0, 0);
+
+    d1.print();
+    d2.print();
 
     return 0;
 }

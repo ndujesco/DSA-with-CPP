@@ -16,6 +16,26 @@ public:
         capacity = 5;
     }
 
+    DynamicArray(int c)
+    {
+        data = new int[5];
+        nextIndex = 0;
+        capacity = c;
+    }
+
+    DynamicArray(DynamicArray const &d)
+    {
+        this->nextIndex = d.nextIndex;
+        this->capacity = d.capacity;
+        // shallow copy this-> data = d.data;
+        this->data = new int[d.capacity]; // I didnt add 1 because there is no need to copy the null character also.
+
+        for (int i = 0; i < d.nextIndex; i++)
+        {
+            this->data[i] = d.data[i];
+        }
+    }
+
     void add(int element)
     {
         if (nextIndex == capacity)
@@ -51,7 +71,7 @@ public:
         }
     }
 
-    int get(int i)
+    int getELement(int i) const
     {
         if (i >= 0 && i < nextIndex)
         {
@@ -63,7 +83,7 @@ public:
         }
     }
 
-    void print()
+    void print() const
     {
         for (int i = 0; i < nextIndex; i++)
         {
@@ -72,7 +92,22 @@ public:
         cout << endl;
     }
 
-    int getCapacity()
+    void operator=(DynamicArray const &d)
+    {
+        // overload the copy assignment operator
+
+        this->nextIndex = d.nextIndex;
+        this->capacity = d.capacity;
+        // shallow copy this-> data = d.data;
+        this->data = new int[d.capacity]; // I didnt add 1 because there is no need to copy the null character also.
+
+        for (int i = 0; i < d.nextIndex; i++)
+        {
+            this->data[i] = d.data[i];
+        }
+    }
+
+    int getCapacity() const
     {
         return capacity;
     }
