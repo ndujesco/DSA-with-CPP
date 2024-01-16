@@ -9,7 +9,6 @@ int main()
     Fraction f2(2, 6);
 
     Fraction f3 = ++(++f1);
-    (f1 += f3) += f3;
     f3.print();
     f1.print(); // f3 == f1 because we returned by reference;
 

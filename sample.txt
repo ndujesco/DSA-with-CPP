@@ -1,0 +1,23 @@
+As a machine-learning algorithm, backpropagation is a crucial step in a common method used to iteratively trail a neural network model. It is used to calculate the necessary parameter adjustments, to gradually minimize error.
+
+In a multi-layered network, backpropagation is  step 2.2 for training a neural network model.
+
+1. Propagate training data through the model from the input to predicted output by computing the successive hidden layers' output (the feedforward step)
+
+2. Adjust the model weights to reduce the error relative to the weights.
+
+    1. The error is typically the squared difference between prediction and target
+
+    2. For each weight, the slope or derivative of the error is found, and the weight adjusted by a negative multiple of this derivatov, so as to go downslope toward the minimum-error configuration.
+
+    3. This derivative is easy to calculate for final layer weights, and possible to calculate for one layeer given the next layer's erivatives. Starting at the end, then, the derivatives are calculated layer by layer toward the beginning -- thus "backpropagation".
+    
+3. Repeatedly update the weights until they converge or the model has ungergone enough iterations.
+
+It is an efficient application of the Leibniz chain rule (1673) to such networks. It is also as the reverse model of automatic differentiation or reverse accumulation, due to Seppo Linnainmaa (1970). The term "backpropagating error correction" was introduced in 1962 by Frank Rosenblatt but he did not know how to implement this, even though Henry J. Kelley had a continuous precursor of backpropagation already in the context of control theory.
+https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery
+
+
+
+
+Here's the corrected version of your passage with proper punctuation:

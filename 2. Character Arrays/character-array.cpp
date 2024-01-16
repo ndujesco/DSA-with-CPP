@@ -4,11 +4,20 @@ using namespace std;
 
 int main()
 {
-    char name[50];
+    char name[5];
+    char fifteen[15];
 
-    cout << "What is your name? ";
-    cin >> name;
-    cout << "Your name is " << name << endl;
+    fifteen[0] = 'a';
+    fifteen[1] = 'a';
+    fifteen[2] = 'a';
+    fifteen[3] = 'a';
+
+
+    cout << fifteen << endl;
+
+    // cout << "What is your name? ";
+    // cin >> name;
+    // cout << "Your name is " << name << endl;
 
     return 0;
 }

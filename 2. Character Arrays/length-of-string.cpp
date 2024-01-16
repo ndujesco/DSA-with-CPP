@@ -20,9 +20,9 @@ int main()
     char name[100];
 
     cout << "Enter your name: ";
-    cin.getline(name, 5);
+    cin.getline(name, 50); // I can taje 4 characters because the last is going to be null
 
-    cout << "The length of characters in your name is " << length(name) << endl;
+    cout << "The length of characters in your name, " << name << " is " << length(name) << endl;
 
     return 0;
 }
