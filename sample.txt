@@ -21,3 +21,7 @@ https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery
 
 
 Here's the corrected version of your passage with proper punctuation:
+
+
+Vector Functions
+Partial, Directional Derivative Differentiable Transformation Gradients, Divergence, Curls

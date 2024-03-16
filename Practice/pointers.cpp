@@ -25,19 +25,10 @@ struct Coefficient
 int main()
 {
 
-    Coefficient coeff1;
-    coeff1.ConstantCoeff = 7;
-    coeff1.FirstOrderCoeff = 7;
-    coeff1.SecondOrderCoeff = 7;
-
-    Coefficient coeff2;
-
-    coeff2 = coeff1;
-
-    // int i = 9;
-    // int j = 10;
-    // int *i_ptr1 = &i;
-    // int &i_ptr2 = i;
+    int i = 9;
+    int j = 10;
+    int *i_ptr1 = &i;
+    int &i_ptr2 = i;
 
     // cout << &i_ptr2 << endl;
     // print(i_ptr2);
