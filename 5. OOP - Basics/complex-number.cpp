@@ -12,7 +12,7 @@ class Complex
     double getArgument()
     {
         /* Ranges from 0 to 360 */
-        double const arctan = this->arctan(imaginary / real);
+        double const arctan = this->reinmannSum(imaginary / real) * (180 / M_PI);
 
         if (arctan > 0)
         {
@@ -32,12 +32,12 @@ class Complex
         }
     }
 
-    double arctan_differential(double input)
+    double integrand(double variable)
     {
-        return 1 / (1 + pow(input, 2));
+        return 1 / (1 + pow(variable, 2));
     }
 
-    double arctan(double x)
+    double reinmannSum(double x)
     {
         /*
             This uses the fact that arctan(x) is the integral from 0 to x of 1/(1 + u^2).
@@ -51,9 +51,9 @@ class Complex
 
         for (int i = 0; i < n; i++)
         {
-            totalHeight += arctan_differential(delta_x * (i + 0.5));
+            totalHeight += integrand(delta_x * (i + 0.5));
         }
-        return (totalHeight * delta_x) * (180 / M_PI);
+        return (totalHeight * delta_x);
     }
 
 public:

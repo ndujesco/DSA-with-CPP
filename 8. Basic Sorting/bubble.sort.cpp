@@ -2,28 +2,20 @@
 
 using namespace std;
 
-void selectionSort(int a[], int n)
-{
-    for (int i = 0; i < n - 1; i++)
-    {
-        int index_of_smallest = i;
-
-        for (int j = i + 1; j < n; j++)
-            if (a[index_of_smallest] > a[j])
-                index_of_smallest = j;
-
-        if (a[index_of_smallest] < a[i])
-            swap(a[i], a[index_of_smallest]);
-    }
-}
-
 void printArray(int a[], int n, string message)
 {
     cout << message;
     for (int i = 0; i < n; i++)
         cout << a[i] << " ";
-
     cout << endl;
+}
+
+void bubbleSort(int a[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+        for (int j = 0; j < n - 1; j++)
+            if (a[j] > a[j + 1])
+                swap(a[j], a[j + 1]);
 }
 
 int main()
@@ -41,7 +33,7 @@ int main()
     }
 
     printArray(a, n, "Your array before sorting: ");
-    selectionSort(a, n);
+    bubbleSort(a, n);
     printArray(a, n, "Your array after sorting: ");
 
     cout << endl;
